@@ -5,6 +5,7 @@
  */
 package com.example.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,5 +28,6 @@ public class Team {
     private String foundationYear;
     
     @OneToMany(mappedBy = "team")
+    @JsonIgnoreProperties("team")
     private List<Player> players;
 }
